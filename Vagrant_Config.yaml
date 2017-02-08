@@ -1,0 +1,34 @@
+---
+ip: "192.168.10.12"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/programs/php/cake_bookmark
+      to: /var/www/cake_bookmark
+
+sites:
+    - map: vagrant.app
+      to: /home/vagrant/cake_bookmark
+
+databases:
+    - cake_bookmark
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
